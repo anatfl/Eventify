@@ -29,9 +29,12 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+      <Stack 
+        screenOptions={{
+          headerTitleAlign: 'center'}}
+          >
+        <Stack.Screen name="index" options={{ title: 'אירועים' }} />
+        <Stack.Screen name="+not-found" options={{ title: 'לא נמצא' }} />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
